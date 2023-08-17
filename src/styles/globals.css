@@ -2,26 +2,225 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 240 5% 64.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 240 3.7% 15.9%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.__action {
+  --background: var(--electric-violet-500);
+  --background-shadow: var(--electric-violet-600);
+  --color: var(--white);
+  --color-soft: var(--white);
+  --color-strong: var(--white);
+  --heading: inherit;
+  --heading-soft: inherit;
+  --heading-sub: inherit;
+  --ring: var(--electric-violet-600);
+  --symbol: var(--white);
+}
+
+@layer base {
+  .__first {
+    --background: var(--white);
+    --background-shadow: var(--white-200);
+    --color: var(--black-600);
+    --color-soft: var(--black-900);
+    --color-strong: var(--black);
+    --heading: var(--black);
+    --heading-soft: var(--black);
+    --heading-sub: var(--black-600);
+    --ring: var(--white-200);
+    --symbol: var(--black-600);
+    --accent: var(--electric-violet-600);
+    --accent-soft: var(--electric-violet-500);
+    --accent-strong: var(--electric-violet-700);
+    --block: var(--crimson-500);
+    --block-soft: var(--crimson-400);
+    --block-strong: var(--crimson-600);
+  }
+
+  .__two {
+    --background: var(--white-100);
+    --background-shadow: var(--white-200);
+    --color: var(--black-500);
+    --color-soft: var(--white-900);
+    --color-strong: var(--black-300);
+    --heading: var(--black-100);
+    --heading-sub: var(--black-400);
+    --heading-soft: var(--black-500);
+    --ring: var(--white-200);
+    --symbol: var(--black-800);
+  }
+
+  .__neutral {
+    --background: var(--black);
+    --background-shadow: var(--black-300);
+    --color: var(--white);
+    --color-soft: var(--white);
+    --color-strong: var(--white);
+    --ring: var(--black-100);
+    --symbol: var(--white);
+  }
+
+  .dark .__first {
+    --background: var(--black);
+    --background-shadow: var(--black-200);
+    --color: var(--white-300);
+    --color-soft: var(--white-900);
+    --color-strong: var(--white);
+    --heading: var(--white);
+    --heading-sub: var(--white-900);
+    --heading-soft: var(--white-900);
+    --ring: var(--black-300);
+    --symbol: var(--white-600);
+    --accent: var(--electric-violet-500);
+    --accent-soft: var(--electric-violet-400);
+    --accent-strong: var(--electric-violet-600);
+    --block: var(--crimson-500);
+    --block-soft: var(--crimson-400);
+    --block-strong: var(--crimson-600);
+  }
+
+  .dark .__two {
+    --background: var(--black-200);
+    --background-shadow: var(--black-300);
+    --color: var(--white-500);
+    --color-soft: var(--black-700);
+    --color-strong: var(--white);
+    --heading: var(--white-100);
+    --heading-soft: var(--white-300);
+    --heading-sub: var(--white-400);
+    --ring: var(--black-300);
+    --symbol: var(--white-800);
+  }
+
+  .dark .__neutral {
+    --background: var(--white);
+    --background-shadow: var(--white-300);
+    --color: var(--black);
+    --color-soft: var(--black);
+    --color-strong: var(--black);
+    --ring: var(--white-100);
+    --symbol: var(--black);
+  }
+}
+
+@layer base {
+  :root {
+    --white: 255 255 255;
+    --white-100: 247 247 247;
+    --white-200: 234 234 234;
+    --white-300: 221 221 221;
+    --white-400: 207 207 207;
+    --white-500: 194 194 194;
+    --white-600: 181 181 181;
+    --white-700: 168 168 168;
+    --white-800: 154 154 154;
+    --white-900: 141 141 141;
+
+    --black: 0 0 0;
+    --black-100: 14 14 14;
+    --black-200: 28 28 28;
+    --black-300: 43 43 43;
+    --black-400: 57 57 57;
+    --black-500: 71 71 71;
+    --black-600: 85 85 85;
+    --black-700: 100 100 100;
+    --black-800: 114 114 114;
+    --black-900: 128 128 128;
+
+    --electric-violet-50: 242 243 255;
+    --electric-violet-100: 231 231 255;
+    --electric-violet-200: 210 212 255;
+    --electric-violet-300: 175 174 255;
+    --electric-violet-400: 134 128 255;
+    --electric-violet-500: 95 77 255;
+    --electric-violet-600: 73 40 255;
+    --electric-violet-700: 59 22 235;
+    --electric-violet-800: 49 18 197;
+    --electric-violet-900: 42 17 161;
+    --electric-violet-950: 21 7 110;
+
+    --crimson-50: 254 242 242;
+    --crimson-100: 255 225 225;
+    --crimson-200: 255 200 200;
+    --crimson-300: 255 162 162;
+    --crimson-400: 252 109 109;
+    --crimson-500: 245 62 62;
+    --crimson-600: 226 33 33;
+    --crimson-700: 190 23 23;
+    --crimson-800: 157 23 23;
+    --crimson-900: 130 26 26;
+    --crimson-950: 71 8 8;
+  }
+
+  body {
+    background-color: rgb(var(--background));
+  }
+
+  * {
+    @apply border-ring
+  }
 }
