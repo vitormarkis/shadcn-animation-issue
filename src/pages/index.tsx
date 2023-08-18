@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="h-screen grid place-items-center">
       <Popover>
-        <PopoverTrigger>
+        <PopoverTrigger asChild>
           <Button variant="ghost">Open</Button>
         </PopoverTrigger>
         <PopoverContent className="p-1 w-[unset]">
