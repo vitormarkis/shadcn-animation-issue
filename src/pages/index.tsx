@@ -1,8 +1,9 @@
-import { DatePicker } from "@/components/MainProblem"
 import { Inter } from "next/font/google"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Button } from "@/components/ui/button"
+
 import { AlertDialogDemo } from "@/components/AlertDialogDemo"
+import { DatePicker } from "@/components/MainProblem"
+import { Button } from "@/components/ui/button"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -17,8 +18,7 @@ export default function Home() {
           <AlertDialogDemo>
             <Button
               className="h-7"
-              variant="ghost"
-            >
+              variant="ghost">
               Open alert modal
             </Button>
           </AlertDialogDemo>
