@@ -32,7 +32,8 @@ export const AccordionStuff = React.forwardRef<React.ElementRef<"div">, Accordio
               onClick={handleToggleAccordion}
               className={cn(
                 "h-7 grid place-items-center rounded-md px-4 text-xs bg-background-shadow",
-                isAccordionOpen && "bg-[#f00]"
+                !isAccordionOpen && "bg-[#00f]",
+                isAccordionOpen && "bg-[#f00]",
               )}>
               {!isAccordionOpen && <span>Click me</span>}
               {isAccordionOpen && <span>Click me AGAIN!</span>}
