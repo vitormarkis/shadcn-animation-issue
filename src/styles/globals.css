@@ -221,6 +221,6 @@
   }
 
   * {
-    @apply border-ring
+    @apply border-ring;
   }
 }

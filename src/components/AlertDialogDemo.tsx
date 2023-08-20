@@ -1,3 +1,9 @@
+import React from "react"
+
+import { cn } from "@/lib/utils"
+
+import { AccordionStuff } from "@/components/AccordionStuff"
+import { DatePicker } from "@/components/MainProblem"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,11 +15,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-
-import React from "react"
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { DatePicker } from "@/components/MainProblem"
 
 export type AlertDialogDemoProps = React.ComponentPropsWithoutRef<"div"> & {
   children: React.ReactNode
@@ -27,28 +29,15 @@ export const AlertDialogDemo = React.forwardRef<React.ElementRef<"div">, AlertDi
         <AlertDialogContent
           {...props}
           className={cn("", props.className)}
-          ref={ref}
-        >
+          ref={ref}>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your account and remove
-              your data from our servers.
-            </AlertDialogDescription>
             <DatePicker />
+            <AccordionStuff />
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel asChild>
               <Button variant="outline">Cancel</Button>
             </AlertDialogCancel>
-            <AlertDialogAction asChild>
-              <Button
-                className="__neutral"
-                variant="default"
-              >
-                Continue
-              </Button>
-            </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

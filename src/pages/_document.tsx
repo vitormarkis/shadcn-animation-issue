@@ -4,8 +4,7 @@ export default function Document() {
   return (
     <Html
       lang="en"
-      className="dark"
-    >
+      className="dark">
       <Head />
       <body className="__first">
         <Main />
